@@ -4,20 +4,24 @@ Section: xfce
 Maintainer: Debian Xfce Maintainers <debian-xfce@lists.debian.org>
 Uploaders: Yves-Alexis Perez <corsac@debian.org>
 Build-Depends: debhelper-compat (= 13),
+               gettext,
+               gir1.2-gobject-2.0-dev,
+               gir1.2-gtk-3.0-dev,
+               gir1.2-libxfce4util-1.0-dev,
                gobject-introspection,
                gtk-doc-tools,
-               intltool,
                libgirepository1.0-dev,
                libgladeui-dev,
                libgtk-3-dev,
                libgtop2-dev,
+               libgudev-1.0-dev [linux-any],
                libstartup-notification0-dev,
-               libxfce4util-dev (>= 4.15.6),
+               libxfce4util-dev (>= 4.17.2),
                libxfconf-0-dev,
-               pkg-config,
+               pkgconf,
                xfce4-dev-tools
 Rules-Requires-Root: no
-Standards-Version: 4.6.0
+Standards-Version: 4.7.2
 Homepage: https://docs.xfce.org/xfce/libxfce4ui/start
 Vcs-Git: https://salsa.debian.org/xfce-team/desktop/libxfce4ui.git
 Vcs-Browser: https://salsa.debian.org/xfce-team/desktop/libxfce4ui
@@ -43,7 +47,9 @@ Depends: gir1.2-libxfce4ui-2.0 (= ${binary:Version}),
          libxfce4ui-2-0 (= ${binary:Version}),
          libxfce4util-dev,
          libxfconf-0-dev,
-         ${misc:Depends}
+         ${misc:Depends},
+         ${gir:Depends}
+Provides: ${gir:Provides}
 Description: Development files for libxfce4ui - Gtk+3 variant
  This package contains the headers and the static library
  for libxfce4ui.
