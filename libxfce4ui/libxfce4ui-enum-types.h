@@ -5,7 +5,7 @@
 #define __LIBXFCE4UI_ENUM_TYPES_H__
 
 G_BEGIN_DECLS
-/* enumerations from "xfce-sm-client.h" */
+/* enumerations from "libxfce4ui-enums.h" */
 GType xfce_sm_client_error_enum_get_type(void) G_GNUC_CONST;
 #define XFCE_TYPE_SM_CLIENT_ERROR_ENUM (xfce_sm_client_error_enum_get_type())
 GType xfce_sm_client_restart_style_get_type(void) G_GNUC_CONST;
